@@ -4,9 +4,9 @@ import SingleCard from './SingleCard';
 const EventCard = ({eventData}) => {
     
     return (
-        <div className='py-5'>
+        <div className='py-10'>
             <h1 className='text-center text-2xl'>Upcoming Events</h1>
-            <div>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-6'>
                 {
                     eventData.map(event => <SingleCard key={event.id} event={event}></SingleCard>)
                 }

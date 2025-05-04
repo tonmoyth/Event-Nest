@@ -8,3 +8,10 @@
 *{
   font-family: "Poppins", sans-serif;
 }
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #0984e3;
+  --color-secondary: teal;
+}
