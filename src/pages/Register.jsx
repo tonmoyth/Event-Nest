@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router";
-import AuthContext from "../Provider/AuthContext";
+import AuthContext from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../Firebase/Firebase.config";
 
 const Register = () => {
-    const {userSignUp,userLoginAndSignInGoogle,userLoginAndSigninGithub} = useContext(AuthContext);
+    const {userSignUp,userLoginAndSignInGoogle,userLoginAndSigninGithub,setUser,user} = useContext(AuthContext);
     const [eyeShow,setEyeShow] = useState(false)
     console.log(eyeShow)
     
@@ -27,7 +29,18 @@ const Register = () => {
             userSignUp(email,password)
         .then(result => {
             console.log(result)
-            toast.success('successfully sign up', {id:'signup'})
+            const userProfile = {
+                displayName:name,
+                photoURL:photo
+            }
+            setUser({...user,...userProfile})
+            updateProfile(auth.currentUser,userProfile)
+            .then(()=>{
+                toast.success('successfully sign up', {id:'signup'})
+            })
+            .catch(error => {
+                toast.error(error.message, {id:'signup'})
+            })
         })
         .catch(error => {
             toast.error(error.message, {id:'signup'})
@@ -60,8 +73,8 @@ const Register = () => {
     }
 
   return (
-    <div className="min-h-[calc(100vh-107px)]">
-      <div className="w-full mx-auto max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+    <div className="min-h-[calc(100vh-107px)] dark:bg-gray-50">
+      <div className="w-full mx-auto max-w-md p-8 space-y-3 rounded-xl  dark:text-gray-800">
         <h1 className="text-2xl font-bold text-center">Sign In</h1>
         <form onSubmit={handleForm} className="space-y-6">
             {/* name */}

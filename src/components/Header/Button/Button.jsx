@@ -1,8 +1,9 @@
 import React from "react";
 
-const Button = ({level}) => {
+const Button = ({level,onclick}) => {
   return (
     <button
+    onClick={onclick}
       href="#_"
       class="relative inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-purple-500"
     >

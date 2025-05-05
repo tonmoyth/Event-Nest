@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import conferenceImage from "../../assets/confarence.jpg";
 import workshopImage from "../../assets/workshop.jpg";
-import img from '../../assets/color.avif'
 import gameImage from '../../assets/game.jpg'
 
 // Import Swiper React components

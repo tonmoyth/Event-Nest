@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router";
-import AuthContext from "../Provider/AuthContext";
+import AuthContext from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 

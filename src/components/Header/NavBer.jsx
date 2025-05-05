@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
 import Button from "./Button/Button";
+import AuthContext from "../../Context/AuthContext";
+import toast from "react-hot-toast";
 
 const NavBer = () => {
+  const { user, userLogOut} = useContext(AuthContext);
+  console.log(user);
+  const logOutButton = () => {
+    userLogOut()
+    .then(() => {
+      toast.success('Log Out Successfully',{id:'logout'})
+    })
+    .catch(error => {
+      toast.error(error.message,{id:'logout'})
+    })
+  }
   const links = (
     <>
       <li>
-       <Link to={`/`}>Home</Link>
+        <Link to={`/`}>Home</Link>
       </li>
     </>
   );
@@ -40,15 +53,33 @@ const NavBer = () => {
         </div>
         <a className="btn btn-ghost text-xl">EventNest</a>
       </div>
+
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <Link to='/login'>
-           <Button level='Log In'></Button>
-        </Link>
+
+      <div className="navbar-end space-x-4">
+        {user ? (
+          <div className="flex gap-4">
+            <div className="avatar">
+              <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">
+                <img
+                  className='cursor-pointer'
+                  referrerPolicy="no-no-referrer"
+                  title={user?.displayName}
+                  src={user?.photoURL}
+                />
+              </div>
+            </div>
+            <div>
+              <Button onclick={logOutButton} level="Log Out"></Button>
+            </div>
+          </div>
+        ) : (
+          <Link to="/login">
+            <Button level="Log In"></Button>
+          </Link>
+        )}
       </div>
     </div>
   );
