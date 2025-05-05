@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router";
 
 const NavBer = () => {
   const links = (
     <>
       <li>
-        <a>Home</a>
+       <Link to={`/`}>Home</Link>
       </li>
     </>
   );

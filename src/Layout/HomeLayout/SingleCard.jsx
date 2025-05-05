@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import Button from "../../components/Header/Button/Button";
 
 const SingleCard = ({ event }) => {
-    const {thumbnail,name,category,date,location,entry_fee } = event
+    const {thumbnail,name,category,date,location,entry_fee,id } = event
   return (
     
         <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
@@ -33,7 +33,9 @@ const SingleCard = ({ event }) => {
             </p>
             <p>Category : <span>{category}</span></p>
             <div>
-              <Button level='View More'></Button>
+             <Link to={`/viewDetails/${id}`}>
+             <Button level='View More'></Button>
+             </Link>
             </div>
           </div>
         </div>
