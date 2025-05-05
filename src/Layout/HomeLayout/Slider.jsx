@@ -1,11 +1,14 @@
 import React from "react";
+import innovatorsImageImage from '../../assets/innovators.jpg'
+import entrepreneursImage from '../../assets/Entrepreneurs.jpg'
+import creativeImage from '../../assets/creative.jpg'
 
 const Slider = () => {
   return (
     <div className="carousel min-h-[calc(100vh-107px)] w-full">
       <div id="slide1" className="carousel-item relative h-[calc(100vh-107px)] w-full">
         <img
-          src="https://i.ibb.co.com/23cszSD3/image-by-rawpixel-com.jpg"
+          src={innovatorsImageImage}
           className="w-full h-full object-cover"
         />
         <div className="absolute bottom-5 left-1/2 flex gap-x-2 -translate-y-1/2 transform">
@@ -22,7 +25,7 @@ const Slider = () => {
 
       <div id="slide2" className="carousel-item h-[calc(100vh-107px)] relative w-full">
         <img
-          src="https://i.ibb.co.com/35mPLGs8/creativity-creative-ideas-imagination-inspiration-design-concept.jpg"
+          src={entrepreneursImage}
           className="w-full h-full object-cover"
         />
         <div className="absolute bottom-5 left-1/2 gap-x-2 flex -translate-y-1/2 transform justify-between">
@@ -36,7 +39,7 @@ const Slider = () => {
       </div>
       <div id="slide3" className="carousel-item h-[calc(100vh-107px)] relative w-full">
         <img
-          src="https://i.ibb.co.com/BHyw5J10/side-view-people-making-music-home.jpg"
+          src={creativeImage}
           className="w-full h-full object-cover"
         />
         <div className="absolute bottom-5 left-1/2 gap-x-2 flex -translate-y-1/2 transform justify-between">

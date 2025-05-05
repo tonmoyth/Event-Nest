@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
+import Button from "../../components/Header/Button/Button";
 
 const SingleCard = ({ event }) => {
     const {thumbnail,name,category,date,location,entry_fee } = event
@@ -13,10 +14,10 @@ const SingleCard = ({ event }) => {
           />
           <div className="p-5 h-full">
             <p className="mb-3 text-xs font-semibold flex justify-between tracking-wide uppercase">
-              <div>
+              <span>
               date
               <span className="text-gray-600">— {date}</span>
-              </div>
+              </span>
               <span>{entry_fee}</span>
             </p>
             <a
@@ -31,7 +32,9 @@ const SingleCard = ({ event }) => {
             <span className="text-primary font-bold">location</span> : <span>{location}</span>
             </p>
             <p>Category : <span>{category}</span></p>
-            <Link className="btn btn-primary">View More</Link>
+            <div>
+              <Button level='View More'></Button>
+            </div>
           </div>
         </div>
      

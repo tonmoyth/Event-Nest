@@ -2,6 +2,10 @@ import React from 'react';
 import Slider from './Slider';
 import { useLoaderData } from 'react-router';
 import EventCard from './eventCard';
+import Feature from './Feature';
+import Count from './Count';
+import WhyChoose from './WhyChoose';
+
 
 const HomeLayout = () => {
     const eventData = useLoaderData();
@@ -13,6 +17,10 @@ const HomeLayout = () => {
             </header>
             <main>
                 <EventCard eventData={eventData}></EventCard>
+                <WhyChoose></WhyChoose>
+                <Feature></Feature>
+                <Count></Count>
+                
             </main>
         </div>
     );

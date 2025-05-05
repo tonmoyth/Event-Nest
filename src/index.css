@@ -12,6 +12,6 @@
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #0984e3;
+  --color-primary: oklch(54.1% 0.281 293.009);
   --color-secondary: teal;
 }
