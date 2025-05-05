@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
+import Button from "./Button/Button";
 
 const NavBer = () => {
   const links = (
@@ -45,7 +46,9 @@ const NavBer = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Log In</a>
+        <Link to='/login'>
+           <Button level='Log In'></Button>
+        </Link>
       </div>
     </div>
   );
