@@ -5,6 +5,8 @@ import ViewDetails from "../pages/viewDetails";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Error from "../pages/Error";
+import PrivateRoute from "../PrivateRoutes/PrivateRoute";
+import Loading from "../components/Header/Loading/Loading";
 
 
 const Router = createBrowserRouter([
@@ -16,11 +18,13 @@ const Router = createBrowserRouter([
             {
                 index: true,
                 Component: HomeLayout,
+                hydrateFallbackElement: <Loading></Loading>,
                 loader: () => fetch('/event.json')
             },
             {
                 path:'viewDetails/:id',
-                Component: ViewDetails,
+                element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+                hydrateFallbackElement: <Loading></Loading>,
                 loader: () => fetch('/event.json')
             },
             {

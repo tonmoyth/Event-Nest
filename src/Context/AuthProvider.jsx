@@ -7,7 +7,7 @@ import { auth } from '../Firebase/Firebase.config';
 
 
 const AuthProvider = ({children}) => {
-
+    const [loading,setLoading] = useState(true);
     const [user,setUser] = useState(null)
     
     const userSignUp = (email,password) => {
@@ -33,7 +33,8 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser)
+            setUser(currentUser);
+            setLoading(false)
         })
         return () => {
             unSubscribe()
@@ -42,6 +43,7 @@ const AuthProvider = ({children}) => {
 
     const authData = {
         user,
+        loading,
         setUser,
         userSignUp,
         userSignIn,

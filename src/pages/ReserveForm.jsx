@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 
 const ReserveForm = () => {
-    const [value,setValue] = useState('');
+    const [textValue,setTextValue] = useState('');
+    const [emil , setEmail] = useState('')
     
 
     const handleForm = (e) => {
         e.preventDefault()
         toast.success('successfully')
-        setValue('')
+        setTextValue('');
+        setEmail('')
     }
 
   return (
@@ -21,7 +23,8 @@ const ReserveForm = () => {
               Enter Your Name
             </label>
             <input
-            defaultValue={value}
+            value={textValue}
+            onChange={(e)=>setTextValue(e.target.value)}
               type="text"
               name="name"
               id="name"
@@ -38,7 +41,8 @@ const ReserveForm = () => {
               
             </div>
             <input
-            defaultValue={value}
+            value={emil}
+              onChange={(e)=>setEmail(e.target.value)}
               type="email"
               name="email"
               id="email"

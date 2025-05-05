@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import AuthContext from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -7,6 +7,9 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Login = () => {
     const {userSignIn,userLoginAndSignInGoogle,userLoginAndSigninGithub} = useContext(AuthContext);
     const [eyeShow,setEyeShow] = useState(false)
+    const {state} = useLocation();
+    const navigate = useNavigate();
+    
 
     
 
@@ -18,6 +21,7 @@ const Login = () => {
         userSignIn(email,password)
         .then(result => {
             console.log(result)
+            navigate(state ? state : '/')
             toast.success('Success Log In',{id:'signin'})
         })
         .catch(error => {
