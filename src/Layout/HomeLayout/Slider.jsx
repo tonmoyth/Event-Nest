@@ -1,58 +1,80 @@
-import React from "react";
-import innovatorsImageImage from '../../assets/innovators.jpg'
-import entrepreneursImage from '../../assets/Entrepreneurs.jpg'
-import creativeImage from '../../assets/creative.jpg'
+import React, { useRef } from "react";
+import conferenceImage from "../../assets/confarence.jpg";
+import workshopImage from "../../assets/workshop.jpg";
+import img from '../../assets/color.avif'
+import gameImage from '../../assets/game.jpg'
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./styles.css";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Slider = () => {
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
   return (
-    <div className="carousel min-h-[calc(100vh-107px)] w-full">
-      <div id="slide1" className="carousel-item relative h-[calc(100vh-107px)] w-full">
-        <img
-          src={innovatorsImageImage}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute bottom-5 left-1/2 flex gap-x-2 -translate-y-1/2 transform">
-          
-          <a href="#slide4" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide2" className="btn btn-circle">
-            ❯
-          </a>
-         
-        </div>
+    <Swiper
+      spaceBetween={30}
+      centeredSlides={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[Autoplay, Pagination, Navigation]}
+      onAutoplayTimeLeft={onAutoplayTimeLeft}
+      className="mySwiper"
+    >
+      <div>
+        <SwiperSlide
+          className="min-h-[calc(100vh-107px)] rounded-xl"
+          style={{
+            backgroundImage: `url(${conferenceImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></SwiperSlide>
+        <SwiperSlide
+          className="min-h-[calc(100vh-107px)] rounded-xl"
+          style={{
+            backgroundImage: `url(${workshopImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+        </SwiperSlide>
+        <SwiperSlide
+          className="min-h-[calc(100vh-107px)] rounded-xl"
+          style={{
+            backgroundImage: `url(${gameImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+        </SwiperSlide>
       </div>
-
-      <div id="slide2" className="carousel-item h-[calc(100vh-107px)] relative w-full">
-        <img
-          src={entrepreneursImage}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute bottom-5 left-1/2 gap-x-2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide1" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide3" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
+      <div className="autoplay-progress" slot="container-end">
+        <svg viewBox="0 0 48 48" ref={progressCircle}>
+          <circle cx="24" cy="24" r="20"></circle>
+        </svg>
+        <span ref={progressContent}></span>
       </div>
-      <div id="slide3" className="carousel-item h-[calc(100vh-107px)] relative w-full">
-        <img
-          src={creativeImage}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute bottom-5 left-1/2 gap-x-2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide2" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide4" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      
-    </div>
+    </Swiper>
   );
 };
 
