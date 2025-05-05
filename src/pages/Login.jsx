@@ -1,15 +1,54 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router";
+import AuthContext from "../Provider/AuthContext";
+import toast from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+    const {userSignIn,userLoginAndSignInGoogle,userLoginAndSigninGithub} = useContext(AuthContext);
+    const [eyeShow,setEyeShow] = useState(false)
+
+    
 
     const handleLoginForm = (e) => {
+        toast.loading('loading',{id:'signin'})
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email,password)
+        userSignIn(email,password)
+        .then(result => {
+            console.log(result)
+            toast.success('Success Log In',{id:'signin'})
+        })
+        .catch(error => {
+            toast.error(error.message,{id:'signin'})
+        })
     }
-    
+
+    const loginGoogle = () => {
+        userLoginAndSignInGoogle()
+        .then(result => {
+            console.log(result)
+            toast.success('success',{id:'signup'})
+        })
+        .catch(error => {
+            console.log(error)
+            toast.error(error.message,{id:'signup'})
+
+        })
+    }
+    const loginGithub = () => {
+        userLoginAndSigninGithub()
+        .then(result => {
+            console.log(result)
+            toast.success('success',{id:'signup'})
+        })
+        .catch(error => {
+            console.log(error)
+            toast.error(error.message,{id:'signup'})
+        })
+    }
+
   return (
     <div className="min-h-[calc(100vh-107px)]">
       <div className="w-full mx-auto max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
@@ -31,13 +70,19 @@ const Login = () => {
             <label htmlFor="password" className="block dark:text-gray-600">
               Password
             </label>
+            <div className="relative">
             <input
-              type="password"
+              type={eyeShow ? "text" : 'password'}
               name="password"
               id="password"
               placeholder="Password"
               className="w-full px-4 border py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
+            <p onClick={()=>setEyeShow(!eyeShow)} className="absolute right-4 top-3">
+                {eyeShow ? <FaEyeSlash size={20}/> : <FaEye size={20} />}
+            </p>
+            </div>
+            
             <div className="flex justify-end text-xs dark:text-gray-600">
               <a rel="noopener noreferrer" href="#">
                 Forgot Password?
@@ -56,7 +101,7 @@ const Login = () => {
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
         </div>
         <div className="flex justify-center space-x-4">
-          <button aria-label="Log in with Google" className="p-3 rounded-sm">
+          <button onClick={loginGoogle} aria-label="Log in with Google" className="p-3 rounded-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
@@ -66,7 +111,7 @@ const Login = () => {
             </svg>
           </button>
        
-          <button aria-label="Log in with GitHub" className="p-3 rounded-sm">
+          <button onClick={loginGithub} aria-label="Log in with GitHub" className="p-3 rounded-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"

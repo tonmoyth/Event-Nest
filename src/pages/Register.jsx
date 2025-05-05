@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const {userSignUp} = useContext(AuthContext);
+    const {userSignUp,userLoginAndSignInGoogle,userLoginAndSigninGithub} = useContext(AuthContext);
     const [eyeShow,setEyeShow] = useState(false)
     console.log(eyeShow)
     
@@ -33,7 +33,30 @@ const Register = () => {
             toast.error(error.message, {id:'signup'})
         })
         }
+    }
 
+    const signupGoogle = () => {
+        userLoginAndSignInGoogle()
+        .then(result => {
+            console.log(result)
+            toast.success('success',{id:'signup'})
+        })
+        .catch(error => {
+            console.log(error)
+            toast.error(error.message,{id:'signup'})
+
+        })
+    }
+    const signupGithub = () => {
+        userLoginAndSigninGithub()
+        .then(result => {
+            console.log(result)
+            toast.success('success',{id:'signup'})
+        })
+        .catch(error => {
+            console.log(error)
+            toast.error(error.message,{id:'signup'})
+        })
     }
 
   return (
@@ -111,7 +134,7 @@ const Register = () => {
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
         </div>
         <div className="flex justify-center space-x-4">
-          <button aria-label="Log in with Google" className="p-3 rounded-sm">
+          <button onClick={signupGoogle} aria-label="Log in with Google" className="p-3 rounded-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
@@ -121,7 +144,7 @@ const Register = () => {
             </svg>
           </button>
           
-          <button aria-label="Log in with GitHub" className="p-3 rounded-sm">
+          <button onClick={signupGithub} aria-label="Log in with GitHub" className="p-3 rounded-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
