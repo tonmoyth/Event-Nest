@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import AuthContext from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const {userSignIn,userLoginAndSignInGoogle,userLoginAndSigninGithub} = useContext(AuthContext);
@@ -33,6 +34,7 @@ const Login = () => {
         userLoginAndSignInGoogle()
         .then(result => {
             console.log(result)
+            navigate(state ? state : '/')
             toast.success('success',{id:'signup'})
         })
         .catch(error => {
@@ -45,6 +47,7 @@ const Login = () => {
         userLoginAndSigninGithub()
         .then(result => {
             console.log(result)
+            navigate(state ? state : '/')
             toast.success('success',{id:'signup'})
         })
         .catch(error => {
@@ -55,8 +58,11 @@ const Login = () => {
 
   return (
     <div className="min-h-[calc(100vh-107px)]">
+      <Helmet>
+        <title>Sign In</title>
+      </Helmet>
       <div className="w-full mx-auto max-w-md p-8 space-y-3 rounded-xl ">
-        <h1 className="text-2xl font-bold text-center">Login</h1>
+        <h1 className="text-2xl font-bold text-center">Sign In</h1>
         <form onSubmit={handleLoginForm} className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="email" className="block dark:text-gray-600">

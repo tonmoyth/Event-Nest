@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import Button from "./Button/Button";
 import AuthContext from "../../Context/AuthContext";
 import toast from "react-hot-toast";
@@ -18,13 +18,19 @@ const NavBer = () => {
   const links = (
     <>
       <li>
-        <Link to={`/`}>Home</Link>
+        <NavLink
+        className={({isActive})=> isActive && 'text-primary'}
+        to={`/`}>Home</NavLink>
       </li>
       <li>
-        <Link to={`/events`}>Events</Link>
+        <NavLink
+        className={({isActive})=> isActive && 'text-primary'}
+        to={`/events`}>Events</NavLink>
       </li>
       <li>
-        <Link to={`/myprofile`}>My Profile</Link>
+        <NavLink
+        className={({isActive})=> isActive && 'text-primary'}
+        to={`/myprofile`}>My Profile</NavLink>
       </li>
     </>
   );

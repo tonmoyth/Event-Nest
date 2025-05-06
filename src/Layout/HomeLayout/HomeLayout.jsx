@@ -5,6 +5,7 @@ import EventCard from './eventCard';
 import Feature from './Feature';
 import Count from './Count';
 import WhyChoose from './WhyChoose';
+import { Helmet } from 'react-helmet-async';
 
 
 const HomeLayout = () => {
@@ -12,6 +13,9 @@ const HomeLayout = () => {
     
     return (
         <div>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <header>
                 <Slider></Slider>
             </header>

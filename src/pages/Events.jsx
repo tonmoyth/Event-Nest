@@ -3,12 +3,16 @@ import { useLoaderData } from "react-router";
 import Event from "./Event";
 import Marquee from "react-fast-marquee";
 import Modal from "../components/Modal/Modal";
+import { Helmet } from "react-helmet-async";
 
 const Events = () => {
   const eventsData = useLoaderData();
 
   return (
     <div>
+        <Helmet>
+            <title>Events</title>
+        </Helmet>
       <div className="event-title flex flex-col items-center space-y-2">
         <span className="uppercase px-3 py-2 font-bold text-primary border border-primary rounded-2xl">
           Event Schedule

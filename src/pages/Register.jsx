@@ -1,15 +1,17 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/Firebase.config";
 import AuthContext from "../Context/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const {userSignUp,userLoginAndSignInGoogle,userLoginAndSigninGithub,setUser,user} = useContext(AuthContext);
     const [eyeShow,setEyeShow] = useState(false)
+    const navigate = useNavigate();
     
     
 
@@ -38,6 +40,7 @@ const Register = () => {
             updateProfile(auth.currentUser,userProfile)
             .then(()=>{
                 toast.success('successfully sign up', {id:'signup'})
+                navigate('/login')
             })
             .catch(error => {
                 toast.error(error.message, {id:'signup'})
@@ -54,6 +57,7 @@ const Register = () => {
         .then(result => {
             console.log(result)
             toast.success('success',{id:'signup'})
+            navigate('/')
         })
         .catch(error => {
             console.log(error)
@@ -66,6 +70,7 @@ const Register = () => {
         .then(result => {
             console.log(result)
             toast.success('success',{id:'signup'})
+            navigate('/')
         })
         .catch(error => {
             console.log(error)
@@ -75,8 +80,11 @@ const Register = () => {
 
   return (
     <div className="min-h-[calc(100vh-107px)] dark:bg-gray-50">
+      <Helmet>
+        <title>Sign Up</title>
+      </Helmet>
       <div className="w-full mx-auto max-w-md p-8 space-y-3 rounded-xl  dark:text-gray-800">
-        <h1 className="text-2xl font-bold text-center">Sign In</h1>
+        <h1 className="text-2xl font-bold text-center">Sign Up</h1>
         <form onSubmit={handleForm} className="space-y-6">
             {/* name */}
           <div className="space-y-1 text-sm">

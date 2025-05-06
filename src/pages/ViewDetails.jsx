@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import ReserveForm from "./ReserveForm";
+import { Helmet } from "react-helmet-async";
 
 const ViewDetails = () => {
   const eventData = useLoaderData();
@@ -11,6 +12,9 @@ const ViewDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Details</title>
+      </Helmet>
         <div className="card lg:card-side bg-base-100 shadow-sm">
       <figure className="w-1/3 h-[300px]">
         <img

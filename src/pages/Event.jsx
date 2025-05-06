@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+
 import Button from "../components/Header/Button/Button";
 import Modal from "../components/Modal/Modal";
 
 const Event = ({ event }) => {
-  const [modalShow, setModalShow] = useState(false);
 
-  const handleButton = () => {
-    setModalShow(true);
-    console.log(modalShow);
-  };
-  const { image, type, title, date, location, topics, tickets_available } =
+ 
+  const { image, type, title, date, location, topics} =
     event;
   return (
     <div className="mt-10">
