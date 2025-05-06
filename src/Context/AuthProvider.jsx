@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
-import { createUserWithEmailAndPassword,GithubAuthProvider,GoogleAuthProvider,onAuthStateChanged,signInWithEmailAndPassword, signInWithPopup, signOut  } from "firebase/auth";
+import { createUserWithEmailAndPassword,GithubAuthProvider,GoogleAuthProvider,onAuthStateChanged,sendPasswordResetEmail,signInWithEmailAndPassword, signInWithPopup, signOut  } from "firebase/auth";
 import { auth } from '../Firebase/Firebase.config';
 
 
@@ -8,7 +8,8 @@ import { auth } from '../Firebase/Firebase.config';
 
 const AuthProvider = ({children}) => {
     const [loading,setLoading] = useState(true);
-    const [user,setUser] = useState(null)
+    const [user,setUser] = useState(null);
+    const [email,setEmail] = useState('')
     
     const userSignUp = (email,password) => {
         return createUserWithEmailAndPassword(auth,email,password);
@@ -31,6 +32,10 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
+    const resetPassword = (email) => {
+        return sendPasswordResetEmail(auth,email)
+    }
+
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -44,12 +49,15 @@ const AuthProvider = ({children}) => {
     const authData = {
         user,
         loading,
+        email,
         setUser,
         userSignUp,
         userSignIn,
         userLoginAndSignInGoogle,
         userLoginAndSigninGithub,
-        userLogOut
+        userLogOut,
+        resetPassword,
+        setEmail
     }
     return (
         <div>

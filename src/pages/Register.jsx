@@ -40,7 +40,7 @@ const Register = () => {
             updateProfile(auth.currentUser,userProfile)
             .then(()=>{
                 toast.success('successfully sign up', {id:'signup'})
-                navigate('/login')
+                navigate('/')
             })
             .catch(error => {
                 toast.error(error.message, {id:'signup'})

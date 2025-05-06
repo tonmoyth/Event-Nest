@@ -6,10 +6,11 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-    const {userSignIn,userLoginAndSignInGoogle,userLoginAndSigninGithub} = useContext(AuthContext);
+    const {userSignIn,userLoginAndSignInGoogle,userLoginAndSigninGithub,setEmail} = useContext(AuthContext);
     const [eyeShow,setEyeShow] = useState(false)
     const {state} = useLocation();
     const navigate = useNavigate();
+    
     
 
     
@@ -56,6 +57,7 @@ const Login = () => {
         })
     }
 
+
   return (
     <div className="min-h-[calc(100vh-107px)]">
       <Helmet>
@@ -69,6 +71,7 @@ const Login = () => {
             Enter Your Email
             </label>
             <input
+            onChange={(e) => setEmail(e.target.value)}
               type="email"
               name="email"
               id="email"
@@ -94,9 +97,9 @@ const Login = () => {
             </div>
             
             <div className="flex justify-end text-xs dark:text-gray-600">
-              <a rel="noopener noreferrer" href="#">
+              <Link to={`/forgetPassword`} className="hover:underline" rel="noopener noreferrer" href="#">
                 Forgot Password?
-              </a>
+              </Link>
             </div>
           </div>
           <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">

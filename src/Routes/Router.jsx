@@ -9,6 +9,7 @@ import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 import Loading from "../components/Header/Loading/Loading";
 import Events from "../pages/Events";
 import MyProfile from "../pages/MyProfile";
+import ForgetPassword from "../pages/ForgetPassword";
 
 
 const Router = createBrowserRouter([
@@ -46,6 +47,10 @@ const Router = createBrowserRouter([
                 path: 'myprofile',
                 element:<PrivateRoute><MyProfile></MyProfile></PrivateRoute>,
 
+            },
+            {
+                path:'forgetPassword',
+                Component: ForgetPassword
             }
 
         ]
