@@ -13,5 +13,8 @@
   name: "light";
   default: true;
   --color-primary: oklch(54.1% 0.281 293.009);
-  --color-secondary: teal;
+
+}
+body{
+  background-color: white !important;
 }

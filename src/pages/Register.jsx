@@ -1,15 +1,16 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router";
-import AuthContext from "../Context/AuthContext";
+
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/Firebase.config";
+import AuthContext from "../Context/AuthContext";
 
 const Register = () => {
     const {userSignUp,userLoginAndSignInGoogle,userLoginAndSigninGithub,setUser,user} = useContext(AuthContext);
     const [eyeShow,setEyeShow] = useState(false)
-    console.log(eyeShow)
+    
     
 
     const handleForm = (e) => {

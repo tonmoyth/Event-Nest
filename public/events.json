@@ -1,0 +1,47 @@
+[
+    {
+      "id": "conf-001",
+      "type": "conference",
+      "title": "International Tech Summit 2025",
+      "date": "2025-06-15",
+      "location": "San Francisco, USA",
+      "topics": ["AI", "Blockchain", "Cybersecurity"],
+      "tickets_available": true,
+      "image": "https://i.ibb.co.com/m5vHpjFb/female-business-executive-giving-speech.jpg"
+    },
+    {
+      "id": "work-001",
+      "type": "workshop",
+      "title": "Creative Writing Workshop",
+      "date": "2025-07-05",
+      "location": "Oxford, UK",
+      "duration": "2 days",
+      "instructor": "Emily Hart",
+      "topics": ["Fiction Writing", "Story Structure", "Editing"],
+      "tickets_available": true,
+      "image": "https://i.ibb.co.com/20RPtmxz/group-diverse-people-having-business-meeting.jpg"
+    },
+    {
+      "id": "sport-001",
+      "type": "sports_event",
+      "title": "National Football Championship",
+      "date": "2025-08-20",
+      "location": "New Delhi, India",
+      "sport": "Football",
+      "topics": ["Delhi Dynamos", "Mumbai Strikers"],
+      "tickets_available": true,
+      "image": "https://i.ibb.co.com/Kp2Gtnyg/sports.jpg"
+    },
+    {
+      "id": "art-001",
+      "type": "art_exhibition",
+      "title": "Modern Art Expo",
+      "date": "2025-09-10",
+      "location": "Paris, France",
+      "featured_artists": ["Clara Monet", "Liu Fang", "Carlos Rivera"],
+      "topics": ["Abstract", "Digital Art", "Minimalism"],
+      "tickets_available": true,
+      "image": "https://i.ibb.co.com/1Y6wf5X4/digital-art-inmersive-exhibition.jpg"
+    }
+  ]
+  

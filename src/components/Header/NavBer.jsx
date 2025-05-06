@@ -6,7 +6,6 @@ import toast from "react-hot-toast";
 
 const NavBer = () => {
   const { user, userLogOut} = useContext(AuthContext);
-  console.log(user);
   const logOutButton = () => {
     userLogOut()
     .then(() => {
@@ -21,10 +20,16 @@ const NavBer = () => {
       <li>
         <Link to={`/`}>Home</Link>
       </li>
+      <li>
+        <Link to={`/events`}>Events</Link>
+      </li>
+      <li>
+        <Link to={`/myprofile`}>My Profile</Link>
+      </li>
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -65,7 +70,7 @@ const NavBer = () => {
               <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">
                 <img
                   className='cursor-pointer'
-                  referrerPolicy="no-no-referrer"
+                  referrerPolicy="no-referrer"
                   title={user?.displayName}
                   src={user?.photoURL}
                 />

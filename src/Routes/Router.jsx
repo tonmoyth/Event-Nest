@@ -7,6 +7,8 @@ import Register from "../pages/Register";
 import Error from "../pages/Error";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 import Loading from "../components/Header/Loading/Loading";
+import Events from "../pages/Events";
+import MyProfile from "../pages/MyProfile";
 
 
 const Router = createBrowserRouter([
@@ -34,6 +36,16 @@ const Router = createBrowserRouter([
             {
                 path: 'register',
                 Component:Register
+            },
+            {
+                path:'events',
+                loader: () => fetch('/events.json'),
+                element:<PrivateRoute><Events></Events></PrivateRoute>,
+            },
+            {
+                path: 'myprofile',
+                element:<PrivateRoute><MyProfile></MyProfile></PrivateRoute>,
+
             }
 
         ]

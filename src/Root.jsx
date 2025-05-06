@@ -6,7 +6,7 @@ import Loading from './components/Header/Loading/Loading';
 
 function Root() {
   const {state} = useNavigation();
-  console.log(navigation);
+  
   return (
     <div>
       <header className='w-11/12 mx-auto'>
