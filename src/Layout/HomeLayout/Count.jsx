@@ -1,6 +1,11 @@
 import React from 'react';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 
 const Count = () => {
+
+  const {ref,inView} = useInView()
+
     return (
         <div className="grid py-8 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="text-center">
@@ -19,9 +24,11 @@ const Count = () => {
                 />
               </svg>
             </div>
-            <h6 className="text-4xl font-bold text-deep-purple-accent-400">
-              253
+            
+            <h6 ref={ref} className="text-3xl font-bold text-deep-purple-accent-400">
+            {inView && <CountUp start={1} duration={2} end={253}></CountUp>}
             </h6>
+              
             <p className="mb-2 font-bold text-md uppercase">victory awards</p>
             
           </div>
@@ -41,8 +48,8 @@ const Count = () => {
                 />
               </svg>
             </div>
-            <h6 className="text-4xl font-bold text-deep-purple-accent-400">
-              2,687
+            <h6 className="text-3xl font-bold text-deep-purple-accent-400">
+            {inView && <CountUp start={1} duration={2} end={2687}></CountUp>}
             </h6>
             <p className="mb-2 font-bold text-md uppercase">active and & energetic members</p>
             
@@ -63,7 +70,9 @@ const Count = () => {
                 />
               </svg>
             </div>
-            <h6 className="text-4xl font-bold text-deep-purple-accent-400">149</h6>
+            <h6 className="text-3xl font-bold text-deep-purple-accent-400">
+            {inView && <CountUp start={1} duration={2} end={149}></CountUp>}
+            </h6>
             <p className="mb-2 font-bold text-md uppercase">event and challenges</p>
             
           </div>

@@ -38,24 +38,24 @@ const Footer = () => {
   return (
     <footer className="p-6 bg-[#34495e] dark:text-gray-900">
       <div className="container px-6 mx-auto text-white space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50">
-        <div className="grid grid-cols-12">
-          <div className=" col-span-full md:pb-0 md:col-span-4">
+        <div className="md:flex space-y-2 justify-between">
+          <div className=" ">
             <Link to={`/`}
               rel="noopener noreferrer"
               href="#"
               className="flex justify-center space-x-3 md:justify-start"
             >
               <span className="self-center text-2xl font-semibold">
-                EventNest
+                Event<span className="text-primary">Nest</span>
               </span>
             </Link>
           </div>
-          <div className="col-span-6 text-center md:text-left md:col-span-4">
+          <div className=" text-center md:text-left ">
             <ul className="flex gap-7 justify-center items-center">
 				      {links}
             </ul>
           </div>
-          <div className="md:col-span-4 flex gap-4 justify-end">
+          <div className="flex justify-center gap-4 ">
             <Link to={'https://www.facebook.com/nurislamhasantonmoyth/'}><FaFacebook size={25}/></Link>
             <Link to={'https://x.com/hasan_tonm58653'}><FaXTwitter size={25}/></Link>
             <Link to={'https://github.com/tonmoyth'}><FaGithub size={25}/></Link>
