@@ -10,6 +10,7 @@ import Loading from "../components/Header/Loading/Loading";
 import Events from "../pages/Events";
 import MyProfile from "../pages/MyProfile";
 import ForgetPassword from "../pages/ForgetPassword";
+import UpdateProfile from "../pages/UpdateProfile";
 
 
 const Router = createBrowserRouter([
@@ -51,6 +52,10 @@ const Router = createBrowserRouter([
             {
                 path:'forgetPassword',
                 Component: ForgetPassword
+            },
+            {
+                path:'updateProfile',
+                Component:UpdateProfile
             }
 
         ]

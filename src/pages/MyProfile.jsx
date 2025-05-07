@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import AuthContext from "../Context/AuthContext";
 import { CiEdit } from "react-icons/ci";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router";
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
@@ -18,9 +19,9 @@ const MyProfile = () => {
               <img src={user.photoURL} />
             </div>
           </div>
-          <button title="Edit" className="absolute top-4 right-4 bg-primary p-1 cursor-pointer rounded-full">
+          <Link to={`/updateProfile`} title="Edit" className="absolute top-4 right-4 bg-primary p-1 cursor-pointer rounded-full">
             <CiEdit className="text-white" size={20} />
-          </button>
+          </Link>
        
         <div className="space-y-4 text-center divide-y dark:divide-gray-300">
           <div className="my-2 space-y-1">
