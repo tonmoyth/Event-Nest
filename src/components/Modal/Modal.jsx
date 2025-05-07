@@ -19,9 +19,9 @@ const Modal = () => {
     <dialog id="my_modal_1" className="modal">
       <div className="modal-box">
         <form onSubmit={handleModal} className="space-y-4">
-          <input value={textValue}
+          <input required value={textValue}
             onChange={(e)=>setTextValue(e.target.value)} type="text" placeholder="Enter Your Name" className="py-2 rounded-xl px-2 w-full border" /><br />
-          <input value={email}
+          <input required value={email}
               onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="Enter Your Email" className="py-2 rounded-xl px-2 w-full border" /><br />
          
           <button

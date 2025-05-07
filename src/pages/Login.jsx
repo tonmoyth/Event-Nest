@@ -21,8 +21,7 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         userSignIn(email,password)
-        .then(result => {
-            console.log(result)
+        .then(() => {
             navigate(state ? state : '/')
             toast.success('Success Log In',{id:'signin'})
         })
@@ -33,26 +32,22 @@ const Login = () => {
 
     const loginGoogle = () => {
         userLoginAndSignInGoogle()
-        .then(result => {
-            console.log(result)
+        .then(() => {
             navigate(state ? state : '/')
             toast.success('success',{id:'signup'})
         })
         .catch(error => {
-            console.log(error)
             toast.error(error.message,{id:'signup'})
 
         })
     }
     const loginGithub = () => {
         userLoginAndSigninGithub()
-        .then(result => {
-            console.log(result)
+        .then(() => {
             navigate(state ? state : '/')
             toast.success('success',{id:'signup'})
         })
         .catch(error => {
-            console.log(error)
             toast.error(error.message,{id:'signup'})
         })
     }

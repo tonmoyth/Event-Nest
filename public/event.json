@@ -1,57 +1,64 @@
-  [
-    {
-      "id": 1,
-      "thumbnail": "https://i.ibb.co.com/23cszSD3/image-by-rawpixel-com.jpg",
-      "name": "Tech Innovators Summit 2025",
-      "category": "Tech",
-      "date": "2025-06-15",
-      "location": "Dhaka Convention Center, Dhaka",
-      "entry_fee": "500 BDT"
-    },
-    {
-      "id": 2,
-      "thumbnail": "https://i.ibb.co.com/cX7GtKv7/rainbow-coloured-hand-painted-watercolour-splatter-design-1048-20680.jpg",
-      "name": "ColorSplash Art Festival",
-      "category": "Art",
-      "date": "2025-07-01",
-      "location": "Chittagong Art Gallery, Chattogram",
-      "entry_fee": "Free"
-    },
-    {
-      "id": 3,
-      "thumbnail": "https://i.ibb.co.com/35mPLGs8/creativity-creative-ideas-imagination-inspiration-design-concept.jpg",
-      "name": "Creative Writing Workshop",
-      "category": "Workshop",
-      "date": "2025-05-20",
-      "location": "Bangla Academy, Dhaka",
-      "entry_fee": "300 BDT"
-    },
-    {
-      "id": 4,
-      "thumbnail": "https://i.ibb.co.com/n85sfRh4/pexels-david-morris-1149400-15729336.jpg",
-      "name": "National Youth Sports Meet",
-      "category": "Sports",
-      "date": "2025-08-10",
-      "location": "MA Aziz Stadium, Chattogram",
-      "entry_fee": "100 BDT"
-    },
-    {
-      "id": 5,
-      "thumbnail": "https://i.ibb.co.com/XZPMRtfy/html-css-collage-concept-with-person.jpg",
-      "name": "Entrepreneurs Connect 2025",
-      "category": "Business",
-      "date": "2025-09-05",
-      "location": "International Conference Hall, Dhaka",
-      "entry_fee": "1000 BDT"
-    },
-    {
-      "id": 6,
-      "thumbnail": "https://i.ibb.co.com/BHyw5J10/side-view-people-making-music-home.jpg",
-      "name": "Rhythm & Beats: Music Workshop",
-      "category": "Art",
-      "date": "2025-07-25",
-      "location": "Sylhet Cultural Center, Sylhet",
-      "entry_fee": "200 BDT"
-    }
-  ]
+[
+  {
+    "id": 1,
+    "thumbnail": "https://i.ibb.co.com/23cszSD3/image-by-rawpixel-com.jpg",
+    "name": "Tech Innovators Summit 2025",
+    "category": "Tech",
+    "date": "2025-06-15",
+    "location": "Dhaka Convention Center, Dhaka",
+    "entry_fee": "500 BDT",
+    "description": "A premier summit bringing together tech leaders, startups, and enthusiasts to explore the future of innovation."
+  },
+  {
+    "id": 2,
+    "thumbnail": "https://i.ibb.co.com/cX7GtKv7/rainbow-coloured-hand-painted-watercolour-splatter-design-1048-20680.jpg",
+    "name": "ColorSplash Art Festival",
+    "category": "Art",
+    "date": "2025-07-01",
+    "location": "Chittagong Art Gallery, Chattogram",
+    "entry_fee": "Free",
+    "description": "Celebrate creativity and color with artists from across the country at this vibrant and interactive art festival."
+  },
+  {
+    "id": 3,
+    "thumbnail": "https://i.ibb.co.com/35mPLGs8/creativity-creative-ideas-imagination-inspiration-design-concept.jpg",
+    "name": "Creative Writing Workshop",
+    "category": "Workshop",
+    "date": "2025-05-20",
+    "location": "Bangla Academy, Dhaka",
+    "entry_fee": "300 BDT",
+    "description": "Sharpen your storytelling skills with expert guidance in this immersive writing workshop."
+  },
+  {
+    "id": 4,
+    "thumbnail": "https://i.ibb.co.com/n85sfRh4/pexels-david-morris-1149400-15729336.jpg",
+    "name": "National Youth Sports Meet",
+    "category": "Sports",
+    "date": "2025-08-10",
+    "location": "MA Aziz Stadium, Chattogram",
+    "entry_fee": "100 BDT",
+    "description": "An exciting multi-sport event showcasing the talents of young athletes from all over the country."
+  },
+  {
+    "id": 5,
+    "thumbnail": "https://i.ibb.co.com/XZPMRtfy/html-css-collage-concept-with-person.jpg",
+    "name": "Entrepreneurs Connect 2025",
+    "category": "Business",
+    "date": "2025-09-05",
+    "location": "International Conference Hall, Dhaka",
+    "entry_fee": "1000 BDT",
+    "description": "Network with leading entrepreneurs and gain insights into startup growth and business strategies."
+  },
+  {
+    "id": 6,
+    "thumbnail": "https://i.ibb.co.com/BHyw5J10/side-view-people-making-music-home.jpg",
+    "name": "Rhythm & Beats: Music Workshop",
+    "category": "Art",
+    "date": "2025-07-25",
+    "location": "Sylhet Cultural Center, Sylhet",
+    "entry_fee": "200 BDT",
+    "description": "Explore musical creativity and enhance your rhythm skills with expert musicians in this hands-on workshop."
+  }
+]
+
   

@@ -30,8 +30,7 @@ const Register = () => {
             return toast.error('Length must be at least 6 character ', {id:'signup'})
         }else{
             userSignUp(email,password)
-        .then(result => {
-            console.log(result)
+        .then(() => {
             const userProfile = {
                 displayName:name,
                 photoURL:photo
@@ -54,26 +53,24 @@ const Register = () => {
 
     const signupGoogle = () => {
         userLoginAndSignInGoogle()
-        .then(result => {
-            console.log(result)
+        .then(() => {
+            
             toast.success('success',{id:'signup'})
             navigate('/')
         })
         .catch(error => {
-            console.log(error)
+            
             toast.error(error.message,{id:'signup'})
 
         })
     }
     const signupGithub = () => {
         userLoginAndSigninGithub()
-        .then(result => {
-            console.log(result)
+        .then(() => {
             toast.success('success',{id:'signup'})
             navigate('/')
         })
         .catch(error => {
-            console.log(error)
             toast.error(error.message,{id:'signup'})
         })
     }
