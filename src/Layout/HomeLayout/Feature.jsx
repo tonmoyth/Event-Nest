@@ -1,6 +1,7 @@
 import React from 'react';
 import sportsImage from '../../assets/sports.jpg'
 import Button from '../../components/Header/Button/Button';
+import { Link } from 'react-router';
 
 const Feature = () => {
     return (
@@ -11,7 +12,9 @@ const Feature = () => {
 				<h3 className="text-3xl font-bold uppercase">Powered by Running Spirit</h3>
 				<p className="my-6 dark:text-gray-600">Sport is a form of physical activity or game. Often competitive and organized, sports use, maintain, or improve physical ability and skills. They also provide enjoyment to participants and, in some cases, entertainment to spectators..</p>
 				<div>
-				<Button level='View More'></Button>
+				<Link to={`/events`}>
+					<Button level='Buy Ticket'></Button>
+				</Link>
 				</div>
 			</div>
 		</div>

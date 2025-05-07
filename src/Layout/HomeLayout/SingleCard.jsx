@@ -3,43 +3,38 @@ import { Link } from "react-router";
 import Button from "../../components/Header/Button/Button";
 
 const SingleCard = ({ event }) => {
-    const {thumbnail,name,category,date,location,entry_fee,id } = event
   return (
-    
-        <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
-          <img
-            src={thumbnail}
-            className="object-cover w-full h-64"
-            alt=""
-          />
-          <div className="p-5 h-full">
-            <p className="mb-3 text-xs font-semibold flex justify-between tracking-wide uppercase">
-              <span>
-              date
-              <span className="text-gray-600">— {date}</span>
-              </span>
-              <span>{entry_fee}</span>
-            </p>
-            <a
-              href="/"
-              aria-label="Category"
-              title="Visit the East"
-              className="inline-block mb-3 text-2xl leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
-            >
-              {name}
-            </a>
-            <p className="mb-2 ">
-            <span className="text-primary font-bold">location</span> : <span>{location}</span>
-            </p>
-            <p>Category : <span>{category}</span></p>
-            <div>
-             <Link to={`/viewDetails/${id}`}>
-             <Button level='View More'></Button>
-             </Link>
-            </div>
-          </div>
+    <div className="card w-full max-w-md bg-base-100 hover:shadow-xl">
+      <figure>
+        <img
+          src={event.thumbnail}
+          alt={event.name}
+          className="h-60 w-full object-cover"
+        />
+      </figure>
+      <div className="card-body border-x-1 border-b-1 border-gray-200 rounded-b-xl">
+        <div className="flex justify-between text-sm text-gray-500 font-semibold">
+          <span>📅 {event.date}</span>
+          <span>{event.entry_fee}</span>
         </div>
-     
+
+        <h2 className="card-title text-xl font-bold">{event.name}</h2>
+
+        <p>
+          <span className="font-semibold">Location :</span>{" "}
+          {event.location}
+        </p>
+        <p>
+          <span className="font-semibold">Category :</span> {event.category}
+        </p>
+
+        <div>
+          <Link to={`/viewDetails/${event.id}`}>
+            <Button level="View More"></Button>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 };
 

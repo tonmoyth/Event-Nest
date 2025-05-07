@@ -19,22 +19,22 @@ const NavBer = () => {
     <>
       <li>
         <NavLink
-        className={({isActive})=> isActive && 'text-primary'}
+        className={({isActive})=> isActive ? 'text-primary': ''}
         to={`/`}>Home</NavLink>
       </li>
       <li>
         <NavLink
-        className={({isActive})=> isActive && 'text-primary'}
+        className={({isActive})=> isActive ? 'text-primary' : ''}
         to={`/events`}>Events</NavLink>
       </li>
       <li>
         <NavLink
-        className={({isActive})=> isActive && 'text-primary'}
+        className={({isActive})=> isActive ? 'text-primary' : ''}
         to={`/myprofile`}>My Profile</NavLink>
       </li>
       {
         user && (
-          <li>
+          <li className="md:hidden">
             <Link onClick={logOutButton}>Log Out</Link>
           </li>
         )
@@ -69,7 +69,7 @@ const NavBer = () => {
             {links}
           </ul>
         </div>
-        <Link to={`/`} className="text-xl">EventNest</Link>
+        <Link to={`/`} className="text-xl font-bold">Event<span className="text-primary">Nest</span></Link>
       </div>
 
       <div className="navbar-center hidden lg:flex">

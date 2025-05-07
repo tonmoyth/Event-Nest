@@ -50,7 +50,7 @@ const Slider = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="bg-black opacity-50 z-0 w-full h-full absolute "></div>
+          <div className="bg-black opacity-50 rounded-xl z-0 w-full h-full absolute "></div>
           <div className="z-10 space-y-2">
           <h1 className="md:text-3xl w-4/5 font-semibold mx-auto flex justify-center text-white z-10 items-center">A conference is a meeting of people who come together to share information about a chosen topic</h1>
           
@@ -70,7 +70,7 @@ const Slider = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="bg-black opacity-50 z-0 w-full h-full absolute "></div>
+          <div className="bg-black opacity-50 rounded-xl z-0 w-full h-full absolute "></div>
 
           <div className="z-10 space-y-2">
           <h1 className="md:text-3xl w-4/5 font-semibold mx-auto flex justify-center text-white z-10 items-center">an interactive, hands-on session designed to provide participants with practical skills, knowledge, and solutions</h1>
@@ -88,7 +88,7 @@ const Slider = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="bg-black opacity-50 z-0 w-full h-full absolute "></div>
+          <div className="bg-black opacity-50 rounded-xl z-0 w-full h-full absolute "></div>
           <div className="z-10 space-y-2">
           <h1 className="md:text-3xl w-4/5 font-semibold mx-auto flex justify-center text-white z-10 items-center">a team automatically advancing to the next round of tournament play without competing </h1>
           
