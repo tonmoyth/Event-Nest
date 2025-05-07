@@ -32,13 +32,20 @@ const NavBer = () => {
         className={({isActive})=> isActive && 'text-primary'}
         to={`/myprofile`}>My Profile</NavLink>
       </li>
+      {
+        user && (
+          <li>
+            <Link onClick={logOutButton}>Log Out</Link>
+          </li>
+        )
+      }
     </>
   );
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="pl-1 pr-3 btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -62,7 +69,7 @@ const NavBer = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">EventNest</a>
+        <Link to={`/`} className="text-xl">EventNest</Link>
       </div>
 
       <div className="navbar-center hidden lg:flex">
@@ -82,7 +89,7 @@ const NavBer = () => {
                 />
               </div>
             </div>
-            <div>
+            <div className="hidden md:block">
               <Button onclick={logOutButton} level="Log Out"></Button>
             </div>
           </div>

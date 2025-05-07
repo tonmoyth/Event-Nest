@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import conferenceImage from "../../assets/confarence.jpg";
 import workshopImage from "../../assets/workshop.jpg";
-import gameImage from '../../assets/game.jpg'
+import gameImage from "../../assets/game.jpg";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,6 +15,8 @@ import "./styles.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Link } from "react-router";
+import Button from "../../components/Header/Button/Button";
 
 const Slider = () => {
   const progressCircle = useRef(null);
@@ -47,7 +49,19 @@ const Slider = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-        ></SwiperSlide>
+        >
+          <div className="bg-black opacity-50 z-0 w-full h-full absolute "></div>
+          <div className="z-10 space-y-2">
+          <h1 className="md:text-3xl w-4/5 font-semibold mx-auto flex justify-center text-white z-10 items-center">A conference is a meeting of people who come together to share information about a chosen topic</h1>
+          
+          <Link to={`/events`}>
+          <Button level='Get Start'></Button>
+          </Link>
+          </div>
+          {/* <div className="z-10">
+           
+          </div> */}
+        </SwiperSlide>
         <SwiperSlide
           className="min-h-[calc(100vh-107px)] rounded-xl"
           style={{
@@ -56,6 +70,15 @@ const Slider = () => {
             backgroundPosition: "center",
           }}
         >
+          <div className="bg-black opacity-50 z-0 w-full h-full absolute "></div>
+
+          <div className="z-10 space-y-2">
+          <h1 className="md:text-3xl w-4/5 font-semibold mx-auto flex justify-center text-white z-10 items-center">an interactive, hands-on session designed to provide participants with practical skills, knowledge, and solutions</h1>
+          
+          <Link to={`/events`}>
+          <Button level='Get Start'></Button>
+          </Link>
+          </div>
         </SwiperSlide>
         <SwiperSlide
           className="min-h-[calc(100vh-107px)] rounded-xl"
@@ -65,6 +88,14 @@ const Slider = () => {
             backgroundPosition: "center",
           }}
         >
+          <div className="bg-black opacity-50 z-0 w-full h-full absolute "></div>
+          <div className="z-10 space-y-2">
+          <h1 className="md:text-3xl w-4/5 font-semibold mx-auto flex justify-center text-white z-10 items-center">a team automatically advancing to the next round of tournament play without competing </h1>
+          
+          <Link to={`/events`}>
+          <Button level='Get Start'></Button>
+          </Link>
+          </div>
         </SwiperSlide>
       </div>
       <div className="autoplay-progress" slot="container-end">
