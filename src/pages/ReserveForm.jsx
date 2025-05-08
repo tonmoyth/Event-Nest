@@ -15,7 +15,7 @@ const ReserveForm = () => {
 
   return (
     <div>
-        <h1 className="text-3xl text-center mb-5">form to reserve a seat</h1>
+        <h1 className="text-3xl text-center mb-5 font-bold">form to reserve a seat</h1>
       <form  onSubmit={handleForm} className="space-y-8">
         <div className="space-y-4">
           <div className="space-y-2">

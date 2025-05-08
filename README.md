@@ -1,12 +1,32 @@
-# React + Vite
+# Project Name : EventNest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 Live URL : https://event-nest-e98b6.web.app
 
-Currently, two official plugins are available:
+Tittle : Discover and explore local events near you.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+📌 Purpose :This project aims to provide a user-friendly platform where people can discover and explore upcoming local events such as conferences, workshops, sports matches, art exhibitions, and more. Users can log in to browse events, view detailed information.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Key Features :
+✅ Feature 1 ( User authentication with Firebase)
+✅ Feature 2 ( Responsive design for mobile and desktop)
+✅ Feature 3 ( Real-time profile updates)
+
+## 🚀 tech stack:
+- *Frontend:* ( React, Tailwind CSS)
+- *Backend:* ( Firebase)
+
+ *Deployment:* (firebase)
+
+ ## 📦 NPM Packages Used: 
+- React Router for Routing
+- firebase for backend 
+- react-countup
+- react-fast-marquee
+- react-helmet-async
+- react-hot-toast
+- react-icons
+- react-intersection-observer
+- swiper
+- tailwindcss
+- daisyui

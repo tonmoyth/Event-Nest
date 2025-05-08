@@ -16,8 +16,12 @@ const Modal = () => {
 
 
   return (
-    <dialog id="my_modal_1" className="modal">
+   <div>
+    
+     <dialog id="my_modal_1" className="modal">
+      
       <div className="modal-box">
+      <h1 className="text-2xl text-center font-bold mb-4">Buy Ticket</h1>
         <form onSubmit={handleModal} className="space-y-4">
           <input required value={textValue}
             onChange={(e)=>setTextValue(e.target.value)} type="text" placeholder="Enter Your Name" className="py-2 rounded-xl px-2 w-full border" /><br />
@@ -40,6 +44,7 @@ const Modal = () => {
         </div>
       </div>
     </dialog>
+   </div>
   );
 };
 

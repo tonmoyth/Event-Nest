@@ -15,7 +15,7 @@ function Root() {
           <NavBer></NavBer>
         </header>
 
-        <main className="w-11/12 mx-auto py-5">
+        <main className="w-11/12 mx-auto py-2">
           {state === "loading" ? <Loading></Loading> : <Outlet></Outlet>}
         </main>
 

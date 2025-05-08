@@ -1,12 +1,8 @@
-
 import Button from "../components/Header/Button/Button";
 import Modal from "../components/Modal/Modal";
 
 const Event = ({ event }) => {
-
- 
-  const { image, type, title, date, location, topics} =
-    event;
+  const { image, type, title, date, location, topics } = event;
   return (
     <div className="mt-10">
       <div className="lg:card lg:card-side lg:w-2/3 mx-auto bg-base-100 shadow-sm">
@@ -32,17 +28,11 @@ const Event = ({ event }) => {
           </p>
 
           <div className="card-actions justify-end">
-            {/* {tickets_available && <Button onclick={handleButton} level="ticket"></Button>} */}
-            <button
-              className="btn"
-              onClick={() => document.getElementById("my_modal_1").showModal()}
-            >
-              Ticket
-            </button>
+            <Button
+              onclick={()=>document.getElementById("my_modal_1").showModal()}
+              level="Ticket"
+            ></Button>
           </div>
-        </div>
-        <div>
-          <Modal></Modal>
         </div>
       </div>
     </div>

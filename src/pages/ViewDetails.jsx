@@ -7,28 +7,35 @@ const ViewDetails = () => {
   const eventData = useLoaderData();
   const { id } = useParams();
 
-  const select = eventData.find((event) => event.id == id);
-  const { thumbnail, name, location, entry_fee, category, date } = select;
+  const event = eventData.find((event) => event.id == id);
+  
 
   return (
     <div>
       <Helmet>
         <title>Event Details</title>
       </Helmet>
-      <div className="card lg:card-side bg-base-100 shadow-sm">
-        <figure className="w-1/3 h-[300px]">
-          <img src={thumbnail} alt="Album" className="w-full" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title text-3xl">{name}</h2>
-          <p>Location : {location}</p>
-          <p>{category}</p>
-          <span>{date}</span>
-          <div className="card-actions justify-end">
-            <span>{entry_fee}</span>
-          </div>
+      <div className="card lg:card-side bg-base-100 shadow-md rounded-xl overflow-hidden">
+      <figure className="w-full lg:w-1/3">
+        <img
+          src={event.thumbnail}
+          alt={event.name}
+          className="h-full w-full object-cover"
+        />
+      </figure>
+      <div className="card-body flex-1">
+        <h2 className="card-title text-2xl font-bold">{event.name}</h2>
+        <p>
+          <span className="font-semibold text-gray-700">Location :</span>{" "}
+          {event.location}
+        </p>
+        <p>{event.category}</p>
+        <p className="text-sm text-gray-500">{event.date}</p>
+        <div className="flex justify-end items-end mt-auto">
+          <p className="text-lg font-semibold">{event.entry_fee}</p>
         </div>
       </div>
+    </div>
       <div className="md:w-1/2 mx-auto py-10">
         <ReserveForm></ReserveForm>
       </div>
