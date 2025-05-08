@@ -16,7 +16,7 @@ const ViewDetails = () => {
         <title>Event Details</title>
       </Helmet>
       <div className="card lg:card-side bg-base-100 shadow-md rounded-xl overflow-hidden">
-      <figure className="w-full lg:w-1/3">
+      <figure className="w-full h-[350px] lg:w-1/3">
         <img
           src={event.thumbnail}
           alt={event.name}

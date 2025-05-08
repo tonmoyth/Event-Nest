@@ -44,6 +44,7 @@ const UpdateProfile = () => {
             </label>
             <input
             value={name}
+            required
             onChange={(e)=>setName(e.target.value)}
               type="text"
               name="name"
@@ -58,6 +59,7 @@ const UpdateProfile = () => {
             </label>
             <input
             value={photo}
+            required
             onChange={(e)=>setPhoto(e.target.value)}
               type="text"
               name="photo"
