@@ -1,5 +1,4 @@
 import Button from "../components/Header/Button/Button";
-import Modal from "../components/Modal/Modal";
 
 const Event = ({ event }) => {
   const { image, type, title, date, location, topics } = event;

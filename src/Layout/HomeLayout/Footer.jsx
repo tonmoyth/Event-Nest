@@ -55,7 +55,7 @@ const Footer = () => {
 				      {links}
             </ul>
           </div>
-          <div className="flex justify-center gap-4 ">
+          <div className="flex justify-center gap-4 mb-4">
             <Link to={'https://www.facebook.com/nurislamhasantonmoyth/'}><FaFacebook size={25}/></Link>
             <Link to={'https://x.com/hasan_tonm58653'}><FaXTwitter size={25}/></Link>
             <Link to={'https://github.com/tonmoyth'}><FaGithub size={25}/></Link>
