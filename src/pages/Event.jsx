@@ -1,7 +1,12 @@
+import toast from "react-hot-toast";
 import Button from "../components/Header/Button/Button";
 
 const Event = ({ event }) => {
   const { image, type, title, date, location, topics } = event;
+
+  const ticketBtn = () => {
+    toast.success('Ticket Done')
+  }
   return (
     <div className="mt-10">
       <div className="lg:card lg:card-side lg:w-2/3 mx-auto bg-base-100 shadow-sm">
@@ -25,12 +30,9 @@ const Event = ({ event }) => {
               </span>
             ))}
           </p>
-
           <div className="card-actions justify-end">
-            <Button
-              onclick={()=>document.getElementById("my_modal_1").showModal()}
-              level="Ticket"
-            ></Button>
+          <Button onclick={ticketBtn} level={'Ticket'}></Button>
+          
           </div>
         </div>
       </div>

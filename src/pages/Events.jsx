@@ -2,7 +2,6 @@ import React from "react";
 import { useLoaderData } from "react-router";
 import Event from "./Event";
 import Marquee from "react-fast-marquee";
-import Modal from "../components/Modal/Modal";
 import { Helmet } from "react-helmet-async";
 
 const Events = () => {
@@ -24,9 +23,7 @@ const Events = () => {
           <Event key={event.id} event={event}></Event>
         ))}
       </div>
-      <div>
-        <Modal></Modal>
-      </div>
+     
       <div className="my-10">
         <Marquee pauseOnHover>
             <p className="text-2xl">International Tech Summit 2025 || Creative Writing Workshop || National Football Championship ||  Modern Art Expo</p>
