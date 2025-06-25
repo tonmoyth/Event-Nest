@@ -32,14 +32,17 @@ Tittle : Discover and explore local events near you.
 - daisyui
 
 ## 🛠️ Getting Started (Run Locally)
-
-### 1. Clone the project:
+---
+### 1. Run Locally:
 
 ```bash
+1.git clone :
 git clone https://github.com/tonmoyth/eventnest.git
 
---
-```bash
-git clone https://github.com/tonmoyth/eventnest.git
-
+2.Install dependencies:
 npm install
+
+3.Start the development server:
+npm run dev
+
+
