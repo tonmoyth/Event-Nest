@@ -38,11 +38,5 @@ Tittle : Discover and explore local events near you.
 ```bash
 git clone https://github.com/tonmoyth/eventnest.git
 
-## 🛠️ Getting Started (Run Locally)
-
-### 1. Install dependencies:
-
-```bash
-npm install
 
 
