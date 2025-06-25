@@ -38,5 +38,8 @@ Tittle : Discover and explore local events near you.
 ```bash
 git clone https://github.com/tonmoyth/eventnest.git
 
+--
+```bash
+git clone https://github.com/tonmoyth/eventnest.git
 
-
+npm install
