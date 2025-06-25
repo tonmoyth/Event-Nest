@@ -32,7 +32,7 @@ Tittle : Discover and explore local events near you.
 - daisyui
 
 ## 🛠️ Getting Started (Run Locally)
----
+
 ### 1. Run Locally:
 
 ```bash
