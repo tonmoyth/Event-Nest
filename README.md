@@ -18,7 +18,7 @@ Tittle : Discover and explore local events near you.
 
  *Deployment:* (firebase)
 
- ## 📦 NPM Packages Used: 
+ ## 📦 Dependencies: 
 - React Router for Routing
 - firebase for backend 
 - react-countup
@@ -30,3 +30,11 @@ Tittle : Discover and explore local events near you.
 - swiper
 - tailwindcss
 - daisyui
+
+## 🛠️ Getting Started (Run Locally)
+
+### 1. Clone the project:
+
+```bash
+git clone https://github.com/tonmoyth/eventnest.git
+cd eventnest
