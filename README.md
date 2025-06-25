@@ -35,6 +35,7 @@ Tittle : Discover and explore local events near you.
 
 ### 1. Clone the project:
 
-```bash
+
 git clone https://github.com/tonmoyth/eventnest.git
-cd eventnest
+
+
